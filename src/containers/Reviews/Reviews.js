@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 14,
   },
-
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(3),
@@ -90,8 +89,8 @@ const Reviews = (props) => {
 
   const prds = reviews.map((review) => {
     return (
-      <Card key={review.id} variant="outlined">
-        <CardContent>
+      <Card key={review.id} variant="outlined" >
+        <CardContent >
           <Typography className={classes.title} gutterBottom variant="h5">
             {review.content}
           </Typography>
@@ -109,11 +108,15 @@ const Reviews = (props) => {
   } else if (error) {
     content = <p>{error}</p>;
   } else if (isLoading) {
-    content = <p> We value your reviews, please review our product and service.</p>;
+    content = <p > We value your reviews, please review our product and service.</p>;
   }
 
   return (
-    <Container className={classes.container}>
+    <Container className={classes.container} style={{
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
+      width: '50%',
+      float:'left',
+    }} >
       <Grid container spacing={3}>
         <Grid item xs={12} md={12} lg={12}>
           <Formik
@@ -125,6 +128,7 @@ const Reviews = (props) => {
             <Form>
               <Grid container spacing={2}>
                 <Grid item md={3}>
+                  <h4>Write your Review</h4>
                   <Field name="content">
                     {({ field, form, meta }) => (
                       <TextField
@@ -138,7 +142,7 @@ const Reviews = (props) => {
                     )}
                   </Field>
                 </Grid>
-
+                        
                 <Grid item xs={1} id ="review">
                   <Button type="submit"> Submit Review</Button>
                 </Grid>
