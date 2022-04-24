@@ -16,6 +16,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    
   },
   toolbar: {
     paddingRight: 24,
@@ -149,8 +150,9 @@ export default function ProductDetail(props) {
             <Grid item xs={12} md={8} lg={8}>
               <Paper
                 style={{
-                  height: '50%',
-                  width: '50%',
+                  // height: '50%',
+                  // width: '50%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.7)',
                 }}
               >
                 <Box
@@ -170,7 +172,6 @@ export default function ProductDetail(props) {
             </Grid>
              
             <Grid item xs={12} md={4} lg={4}>
-           <h1> My Shopping Cart </h1>
               <ShoppingCart checkAgain={refresh} />
             </Grid>
             {/* Reviews */}

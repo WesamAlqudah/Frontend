@@ -3,7 +3,7 @@ import api from '../../configuration/api';
 import Address from '../../components/Address/Address';
 import { ShoppingContext } from '../ShoppingCart/ShoppingCart';
 import { authenticationService } from '../../services/authentication.service';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 const Addresses = (props) => {
   const [addresses, setAddresses] = useState([]);
@@ -87,12 +87,12 @@ const Addresses = (props) => {
   }
 
   return (
-    <div >
-    <h5 id="seladd">Please Select your address</h5>
+    <>
+    <Typography variant="h5" color='primary' id="seladd">Please Select your address</Typography>
     <Box display="flex" mb={1}>
       {content}
     </Box>
-    </div>
+    </>
   );
 };
 

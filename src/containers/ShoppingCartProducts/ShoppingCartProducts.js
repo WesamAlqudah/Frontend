@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../configuration/api';
 import { authenticationService } from '../../services/authentication.service';
-import { Box} from '@material-ui/core';
+import { Box, Paper, Typography} from '@material-ui/core';
 
 const ShoppingCartProducts = (props) => {
   const [products, setProducts] = useState([]);
@@ -72,11 +72,14 @@ const ShoppingCartProducts = (props) => {
   }
 
   return (
-    <Box display="flex" justifyContent="space-between" mb={1}>
-      <li>
-      {content}
-      </li>
-    </Box>
+    // <Box display="flex" justifyContent="space-between" mb={1}>
+    //   <li>
+    <Paper>
+      <Typography>{content}</Typography>
+      
+    </Paper>
+    //   </li>
+    // </Box>
   );
 };
 
